@@ -1,0 +1,25 @@
+<body>
+<form>
+    <div class="container">
+        <h1>Buscar CEP</h1>
+        <input
+          type="text" #cep
+          placeholder="Digitar CEP"
+          name="username"
+          id="cep"
+          required
+        />
+
+        <button type="submit" (click)="buscarCEP(cep.value); $event.preventDefault()">Buscar</button>
+      </div>
+
+  </form>
+  <div class="result" *ngIf="isResult">
+    <h4>CEP: {{cepNum}}</h4>
+    <p>Endereço: {{rua}}</p>
+    <p>Bairro: {{bairro}}</p>
+    <p>Cidade: {{cidade}}</p>
+    <p>Estado: {{estado}}</p>
+    <button type="reset" (click)="limparCEP()">Limpar</button>
+    </div>
+</body>
